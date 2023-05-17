@@ -1,0 +1,19 @@
+services:
+    _defaults:
+        public: true
+
+    App\Infrastructure\Command\Command\CommandBus:
+        arguments:
+            - '@service_container'
+
+    App\Infrastructure\Command\Post\PostCreateCommandHandler:
+        arguments:
+            - '@App\Infrastructure\Repository\PostRepository'
+
+    App\Infrastructure\Command\Post\PostUpdateCommandHandler:
+        arguments:
+            - '@App\Infrastructure\Repository\PostRepository'
+
+    App\Infrastructure\Command\Post\PostDeleteCommandHandler:
+        arguments:
+            - '@App\Infrastructure\Repository\PostRepository'

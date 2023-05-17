@@ -1,0 +1,9 @@
+nelmio_api_doc:
+    documentation:
+        info:
+            title: Personal blog
+            description: Create, read, update, delete
+            version: 1.0.0
+    areas:
+        path_patterns:
+            - /post

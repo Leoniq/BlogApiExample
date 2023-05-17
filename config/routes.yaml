@@ -1,0 +1,36 @@
+app.swagger_ui:
+  path: /api/doc
+  methods: GET
+  defaults: { _controller: nelmio_api_doc.controller.swagger_ui }
+
+# POST ENDPOINT
+post_create_action:
+  path: /post/create
+  methods: POST
+  defaults: { _controller: App\Application\Controller\PostController::createPostAction }
+
+post_list_action:
+  path: /post/list
+  methods: GET
+  defaults: { _controller: App\Application\Controller\PostController::listPostAction }
+
+post_read_action:
+  path: /post/{id}/read
+  methods: GET
+  defaults: { _controller: App\Application\Controller\PostController::readPostAction }
+  requirements:
+      id: \d+
+
+post_update_action:
+  path: /post/{id}/update
+  methods: PATCH
+  defaults: { _controller: App\Application\Controller\PostController::updatePostAction }
+  requirements:
+      id: \d+
+
+post_delete_action:
+  path: /post/{id}/delete
+  methods: DELETE
+  defaults: { _controller: App\Application\Controller\PostController::deletePostAction }
+  requirements:
+      id: \d+
